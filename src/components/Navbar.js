@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Navbar = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const bodyEl = document.body;
+  // const bodyEl = document.body;
   const links = ["features", "pricing", "resources"];
 
   return (
@@ -47,10 +47,10 @@ const Navbar = () => {
           onClick={() => {
             if (isMobileOpen) {
               setIsMobileOpen(!isMobileOpen);
-              bodyEl.style.overflow = "auto";
+              // bodyEl.style.overflow = "auto";
             } else {
               setIsMobileOpen(!isMobileOpen);
-              bodyEl.style.overflow = "hidden";
+              // bodyEl.style.overflow = "hidden";
             }
           }}
         >
