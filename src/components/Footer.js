@@ -21,16 +21,19 @@ const Footer = () => {
           </svg>
         </div>
         <div className="links flex flex-col md:flex-row gap-[38px] xl:gap-[94px] xl:ml-40">
-          {links.map(item => {
+          {links.map((item, id) => {
             return (
-              <div className="text-center md:text-left">
+              <div key={id} className="text-center md:text-left">
                 <h3 className="capitalize font-bold text-base text-white mb-[17px]">
                   {item.name}
                 </h3>
                 <ul>
-                  {item.links.map(i => {
+                  {item.links.map((i, id) => {
                     return (
-                      <li className="text-[15px] text-grayish-violet py-[5px] hover:text-main-cyan">
+                      <li
+                        key={id}
+                        className="text-[15px] text-grayish-violet py-[5px] hover:text-main-cyan"
+                      >
                         <a href={`/${i}`}>{i}</a>
                       </li>
                     );

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 const Navbar = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  // const bodyEl = document.body;
   const links = ["features", "pricing", "resources"];
 
   return (
@@ -20,9 +19,12 @@ const Navbar = () => {
         </div>
         <div className="links ml-11 hidden capitalize flex-row w-full items-center justify-between md:flex">
           <ul className="flex flex-row items-center gap-5 xl:gap-8">
-            {links.map(link => {
+            {links.map((link, id) => {
               return (
-                <li className="text-grayish-violet hover:text-very-dark-violet">
+                <li
+                  key={id}
+                  className="text-grayish-violet hover:text-very-dark-violet"
+                >
                   <a href={`/${link}`}>{link}</a>
                 </li>
               );
@@ -47,10 +49,8 @@ const Navbar = () => {
           onClick={() => {
             if (isMobileOpen) {
               setIsMobileOpen(!isMobileOpen);
-              // bodyEl.style.overflow = "auto";
             } else {
               setIsMobileOpen(!isMobileOpen);
-              // bodyEl.style.overflow = "hidden";
             }
           }}
         >
@@ -79,9 +79,12 @@ const MobileMenu = ({ links, isMobileOpen }) => {
     >
       <div className="links bg-dark-violet text-white mx-6 px-6 py-[39px] rounded-[11px]">
         <ul>
-          {links.map(link => {
+          {links.map((link, id) => {
             return (
-              <li className="my-[30px] hover:text-cyan-hover first:mt-0">
+              <li
+                key={id}
+                className="my-[30px] hover:text-cyan-hover first:mt-0"
+              >
                 <a href={`/${link}`}>{link}</a>
               </li>
             );

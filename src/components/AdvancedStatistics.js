@@ -58,9 +58,16 @@ const AdvancedStatistics = () => {
         <div className="cards relative flex flex-col items-start gap-[92px] md:flex-row md:gap-[30px] md:justify-center">
           <div className="vl border-l-8 -ml-1 border-main-cyan absolute left-1/2 top-10 h-2/3 z-0 md:hidden"></div>
           <div className="hl border-t-8 -mt-1 border-main-cyan absolute top-[45%] w-2/3 z-0 hidden md:block"></div>
-          {cards.map(card => {
+          {cards.map((card, id) => {
             const { title, description, icon } = card;
-            return <Card title={title} description={description} icon={icon} />;
+            return (
+              <Card
+                key={id}
+                title={title}
+                description={description}
+                icon={icon}
+              />
+            );
           })}
         </div>
       </div>
