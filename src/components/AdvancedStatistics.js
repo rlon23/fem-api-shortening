@@ -44,17 +44,25 @@ const AdvancedStatistics = () => {
     },
   ];
   return (
-    <div className="advanced_statistics">
-      <h2 className="title">Advanced Statistics</h2>
-      <p className="description">
-        Track how your links are performing across the web with our advanced
-        statistics dashboard.
-      </p>
-      {cards.map(card => {
-        const { title, description, icon } = card;
-        return <Card title={title} description={description} icon={icon} />;
-      })}
-    </div>
+    <section className="advanced_statistics bg-off-white">
+      <div className="pt-[147px] px-6 pb-[71px] flex flex-col max-w-[1440px] mx-auto">
+        <div className="text mb-[92px]">
+          <h2 className="title text-[28px] font-bold text-center tracking-tight text-very-dark-violet	mb-4">
+            Advanced Statistics
+          </h2>
+          <p className="description font-medium text-base text-center leading-7 text-grayish-violet ">
+            Track how your links are performing across the web with our advanced
+            statistics dashboard.
+          </p>
+        </div>
+        <div className="cards flex flex-col gap-[92px] md:flex-row md:gap-[30px] md:justify-center">
+          {cards.map(card => {
+            const { title, description, icon } = card;
+            return <Card title={title} description={description} icon={icon} />;
+          })}
+        </div>
+      </div>
+    </section>
   );
 };
 
