@@ -2,7 +2,7 @@ import React from "react";
 
 const Card = ({ icon, title, description }) => {
   return (
-    <div className="card bg-white rounded-lg text-center px-7 pb-[39px] md:max-w-[350px]">
+    <div className="card bg-white rounded-lg text-center px-7 pb-[39px] md:max-w-[350px] z-10 md:first:mt-0 md:last:mt-[88px] md:even:mt-[44px] ">
       <div className="icon bg-dark-violet h-[88px] w-[88px] mx-auto relative top-[-44px] flex justify-center items-center rounded-full ">
         {icon}
       </div>
