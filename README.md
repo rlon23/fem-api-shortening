@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fcb1405d-ee7a-457d-b3a6-6d9aece13da7/deploy-status)](https://app.netlify.com/sites/arlony-fem-url-shortening-api/deploys)
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.com">
