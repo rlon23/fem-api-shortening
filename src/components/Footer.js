@@ -11,7 +11,7 @@ const Footer = () => {
   ];
   return (
     <footer className="footer bg-very-dark-violet">
-      <div className="flex flex-col md:flex-row md:justify-center md:items-start lg:justify-between items-center gap-[47px] pt-[54px] pb-14 lg:px-20 xl:px-[163px] max-w-[1440px] mx-auto">
+      <div className="px-6 flex flex-col md:flex-row md:items-start md:justify-between items-center gap-[47px] pt-[54px] pb-14 lg:px-20 xl:px-[163px] max-w-[1440px] mx-auto">
         <div className="logo shrink">
           <svg
             className="w-[121px] h-[33px] fill-white"

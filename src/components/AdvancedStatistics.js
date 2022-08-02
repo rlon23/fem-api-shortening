@@ -47,17 +47,17 @@ const AdvancedStatistics = () => {
     <section className="advanced_statistics bg-off-white">
       <div className="pt-[147px] px-6 pb-[71px] flex flex-col max-w-[1440px] mx-auto">
         <div className="text mb-[92px]">
-          <h2 className="title text-[28px] font-bold text-center tracking-tight text-very-dark-violet	mb-4">
+          <h2 className="title text-[28px] md:text-[40px] font-bold text-center tracking-tight text-very-dark-violet	mb-4">
             Advanced Statistics
           </h2>
-          <p className="description font-medium text-base text-center leading-7 text-grayish-violet max-w-[455px] mx-auto">
+          <p className="description font-medium text-base md:text-lg text-center leading-7 text-grayish-violet max-w-lg mx-auto">
             Track how your links are performing across the web with our advanced
             statistics dashboard.
           </p>
         </div>
         <div className="cards relative flex flex-col items-start gap-[92px] md:flex-row md:gap-[30px] md:justify-center">
           <div className="vl border-l-8 -ml-1 border-main-cyan absolute left-1/2 top-10 h-2/3 z-0 md:hidden"></div>
-          <div className="hl border-t-8 -mt-1 border-main-cyan absolute top-1/2 w-2/3 z-0 hidden md:block"></div>
+          <div className="hl border-t-8 -mt-1 border-main-cyan absolute top-[45%] w-2/3 z-0 hidden md:block"></div>
           {cards.map(card => {
             const { title, description, icon } = card;
             return <Card title={title} description={description} icon={icon} />;
