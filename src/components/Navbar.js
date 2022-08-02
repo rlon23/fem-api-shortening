@@ -1,14 +1,8 @@
 import React, { useState } from "react";
-import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 
 const Navbar = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const links = ["features", "pricing", "resources"];
-  const mobileMenuEl = document.getElementsByClassName("MobileMenu");
-  const closeMobileMenu = () => {
-    setIsMobileOpen(false);
-    enableBodyScroll(mobileMenuEl);
-  };
 
   return (
     <nav className="navbar bg-white">
@@ -31,7 +25,7 @@ const Navbar = () => {
                   key={id}
                   className="text-grayish-violet hover:text-very-dark-violet"
                 >
-                  <a href="/#">{link}</a>
+                  <a href={`/${link}`}>{link}</a>
                 </li>
               );
             })}
@@ -42,7 +36,7 @@ const Navbar = () => {
               <a href="/login">login</a>
             </li>
             <li>
-              <a href="/#">
+              <a href="/singup">
                 <button className="rounded-full min-h-[40px] capitalize font-bold text-white px-6 py-2 bg-main-cyan hover:bg-cyan-hover w-full">
                   sign up
                 </button>
@@ -54,11 +48,9 @@ const Navbar = () => {
           className="menu cursor-pointer md:hidden"
           onClick={() => {
             if (isMobileOpen) {
-              closeMobileMenu();
+              setIsMobileOpen(!isMobileOpen);
             } else {
               setIsMobileOpen(!isMobileOpen);
-              disableBodyScroll(mobileMenuEl);
-              window.scrollTo(0, 0);
             }
           }}
         >
@@ -72,17 +64,13 @@ const Navbar = () => {
           </svg>
         </button>
 
-        <MobileMenu
-          links={links}
-          isMobileOpen={isMobileOpen}
-          closeMobileMenu={closeMobileMenu}
-        />
+        <MobileMenu links={links} isMobileOpen={isMobileOpen} />
       </div>
     </nav>
   );
 };
 
-const MobileMenu = ({ links, isMobileOpen, closeMobileMenu }) => {
+const MobileMenu = ({ links, isMobileOpen }) => {
   return (
     <div
       className={`MobileMenu ${
@@ -97,24 +85,17 @@ const MobileMenu = ({ links, isMobileOpen, closeMobileMenu }) => {
                 key={id}
                 className="my-[30px] hover:text-cyan-hover first:mt-0"
               >
-                <a href="/#" onClick={() => closeMobileMenu()}>
-                  {link}
-                </a>
+                <a href={`/${link}`}>{link}</a>
               </li>
             );
           })}
           <hr className="border-grayish-violet" />
           <li className="my-[30px] hover:text-cyan-hover">
-            <a href="/#" onClick={() => closeMobileMenu()}>
-              login
-            </a>
+            <a href="/login">login</a>
           </li>
           <li>
-            <a href="/#">
-              <button
-                className="rounded-full min-h-[47px] capitalize py-2 bg-main-cyan hover:bg-cyan-hover w-full"
-                onClick={() => closeMobileMenu()}
-              >
+            <a href="/singup">
+              <button className="rounded-full min-h-[47px] capitalize py-2 bg-main-cyan hover:bg-cyan-hover w-full">
                 sign up
               </button>
             </a>
